@@ -3,9 +3,8 @@
 namespace App\Commands;
 
 use App\Libs\Changelog;
-use App\Libs\ConfigReader;
 use LaravelZero\Framework\Commands\Command;
-use Illuminate\Support\Facades\File;
+
 
 class ChangeloggerCommand extends Command
 {
@@ -41,6 +40,6 @@ class ChangeloggerCommand extends Command
      */
     public function handle(): void
     {
-        dd($this->changelog);
+        dd($this->changelog->getEntries());
     }
 }
