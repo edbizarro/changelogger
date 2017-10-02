@@ -28,8 +28,10 @@ class Changelog
      * @param ConfigReader $configReader
      * @param YamlParser $parser
      */
-    public function __construct(ConfigReader $configReader, YamlParser $parser)
-    {
+    public function __construct(
+        ConfigReader $configReader,
+        YamlParser $parser
+    ) {
         $this->reader = $configReader;
         $this->parser = $parser;
 
