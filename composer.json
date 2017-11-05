@@ -1,7 +1,7 @@
 {
     "name": "edbizarro/changelogger",
     "description": "",
-    "keywords": ["changelog"],
+    "keywords": ["changelog", "laravel", "laravel-zero"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/edbizarro/changelogger/issues",
