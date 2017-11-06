@@ -31,6 +31,7 @@ class ConfigReader
      * @param string $filePath
      *
      * @return mixed|null
+     * @throws \Exception
      */
     public function load(string $filePath)
     {

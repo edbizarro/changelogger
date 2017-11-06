@@ -1,0 +1,12 @@
+---
+changelogger:
+  filename: CHANGELOG.md
+  folder: changelog/unreleased
+  types:
+    - security
+    - removed
+    - fixed
+    - deprecated
+    - changed
+    - added
+    - other

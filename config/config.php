@@ -39,7 +39,8 @@ return [
          * any of the commands specified below.
          */
         'commands' => [
-            // App\Commands\YourNewCommand::class,
+            \App\Commands\ChangeloggerCommand::class,
+            \App\Commands\ChangeloggerInitCommand::class,
         ],
 
         /*
