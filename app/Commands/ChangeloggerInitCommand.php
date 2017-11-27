@@ -5,7 +5,6 @@ namespace App\Commands;
 use LaravelZero\Framework\Commands\Command;
 use Illuminate\Support\Facades\File;
 
-
 class ChangeloggerInitCommand extends Command
 {
     /**
@@ -41,6 +40,5 @@ class ChangeloggerInitCommand extends Command
             $this->info('CHANGELOG.md not present, creating');
             File::put('CHANGELOG.md', '');
         }
-
     }
 }

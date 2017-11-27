@@ -2,9 +2,6 @@
 
 namespace App\Libs;
 
-use Symfony\Component\Yaml\Exception\ParseException;
-use Symfony\Component\Yaml\Yaml;
-
 class ConfigReader
 {
     /**
@@ -13,16 +10,16 @@ class ConfigReader
     protected $config;
 
     /**
-     * @var YamlParser
+     * @var Yaml
      */
     protected $parser;
 
     /**
      * ConfigReader constructor.
      *
-     * @param YamlParser $parser
+     * @param Yaml $parser
      */
-    public function __construct(YamlParser $parser)
+    public function __construct(Yaml $parser)
     {
         $this->parser = $parser;
     }

@@ -5,7 +5,6 @@ namespace App\Commands;
 use App\Libs\Changelog;
 use LaravelZero\Framework\Commands\Command;
 
-
 class ChangeloggerCommand extends Command
 {
     /**
@@ -27,7 +26,7 @@ class ChangeloggerCommand extends Command
      */
     protected $changelog;
 
-    public function __construct (Changelog $changelog)
+    public function __construct(Changelog $changelog)
     {
         parent::__construct();
         $this->changelog = $changelog;
