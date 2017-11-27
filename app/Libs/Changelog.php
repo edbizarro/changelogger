@@ -50,8 +50,20 @@ class Changelog
     public function getEntries(): Collection
     {
         /** todo Remove 'File' dependency */
-        return collect(File::files($this->reader->folder))->transform(function ($item) {
+        return $this->orderEntriees(collect(File::files($this->reader->folder))->transform(function ($item) {
             return $this->parser->parse($item->getPathname());
+        }));
+    }
+
+    public function orderEntriees(Collection $entries): Collection
+    {
+        $orderedEntries = collect();
+
+        $correctOrder = $this->config['changelogger']['types'];
+        collect($correctOrder)->each(function ($type) use ($entries, $orderedEntries) {
+            $orderedEntries[$type] = $entries->where('type', $type)->all();
         });
+
+        return $orderedEntries->filter();
     }
 }

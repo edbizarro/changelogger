@@ -44,6 +44,6 @@ class ChangeloggerCommand extends Command
             return;
         }
 
-        dd($this->changelog->getEntries());
+        dd($this->changelog->getEntries()->all());
     }
 }
