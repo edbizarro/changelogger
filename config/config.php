@@ -39,8 +39,10 @@ return [
          * any of the commands specified below.
          */
         'commands' => [
-            \App\Commands\ChangeloggerCommand::class,
-            \App\Commands\ChangeloggerInitCommand::class,
+        ],
+
+        'commands-namespaces' => [
+            "App\Commands",
         ],
 
         /*

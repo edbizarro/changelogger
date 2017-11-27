@@ -2,7 +2,6 @@
 
 namespace App\Commands;
 
-use App\Libs\Changelog;
 use LaravelZero\Framework\Commands\Command;
 use Illuminate\Support\Facades\File;
 
