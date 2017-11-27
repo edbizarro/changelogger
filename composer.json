@@ -17,8 +17,7 @@
         "php": ">=7.1",
         "erusev/parsedown": "^1.6",
         "illuminate/filesystem": "5.5.*",
-        "laravel-zero/framework": "3.10.*",
-        "nunomaduro/collision": "1.1.*",
+        "laravel-zero/framework": "4.0.*",
         "symfony/yaml": "^3.3"
     },
     "minimum-stability": "dev",
