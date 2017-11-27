@@ -36,5 +36,11 @@ class ChangeloggerInitCommand extends Command
             $this->info('changelogger.yml created');
         }
 
+        $this->info('Check if CHANGELOG.md exists...');
+        if (! File::exists('CHANGELOG.md')) {
+            $this->info('CHANGELOG.md not present, creating');
+            File::put('CHANGELOG.md', '');
+        }
+
     }
 }
