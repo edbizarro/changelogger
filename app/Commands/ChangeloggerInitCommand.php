@@ -25,20 +25,29 @@ class ChangeloggerInitCommand extends Command
     public function handle(): void
     {
         if (! File::exists('changelog')) {
-            $this->info('Creating changelog/unreleased folder');
-            File::makeDirectory('changelog/unreleased', 0775, true);
+            $this->task('Creating changelog/unreleased folder', function () {
+                File::makeDirectory('changelog/unreleased', 0775, true);
+                return true;
+            });
         }
 
         if (! File::exists('changelogger.yml')) {
-            $this->info('Creating default config');
-            File::copy('vendor/edbizarro/changelogger/app/Stubs/changelogger.yml.stub', 'changelogger.yml');
-            $this->info('changelogger.yml created');
+            $this->task('Creating default config', function () {
+                File::copy('vendor/edbizarro/changelogger/app/Stubs/changelogger.yml.stub', 'changelogger.yml');
+                return true;
+            });
         }
 
-        $this->info('Check if CHANGELOG.md exists...');
-        if (! File::exists('CHANGELOG.md')) {
-            $this->info('CHANGELOG.md not present, creating');
-            File::put('CHANGELOG.md', '');
-        }
+        $this->task('Check if CHANGELOG.md exists', function () {
+            if (! File::exists('CHANGELOG.md')) {
+                $this->task('CHANGELOG.md not present, creating', function () {
+                    File::put('CHANGELOG.md', '');
+                    return true;
+                });
+                File::copy('vendor/edbizarro/changelogger/app/Stubs/changelogger.yml.stub', 'changelogger.yml');
+                return true;
+            }
+        });
+
     }
 }
