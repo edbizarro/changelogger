@@ -27,14 +27,12 @@ class ChangeloggerInitCommand extends Command
         if (! File::exists('changelog')) {
             $this->task('Creating changelog/unreleased folder', function () {
                 File::makeDirectory('changelog/unreleased', 0775, true);
-                return true;
             });
         }
 
         if (! File::exists('changelogger.yml')) {
             $this->task('Creating default config', function () {
                 File::copy('vendor/edbizarro/changelogger/app/Stubs/changelogger.yml.stub', 'changelogger.yml');
-                return true;
             });
         }
 
@@ -42,10 +40,8 @@ class ChangeloggerInitCommand extends Command
             if (! File::exists('CHANGELOG.md')) {
                 $this->task('CHANGELOG.md not present, creating', function () {
                     File::put('CHANGELOG.md', '');
-                    return true;
                 });
                 File::copy('vendor/edbizarro/changelogger/app/Stubs/changelogger.yml.stub', 'changelogger.yml');
-                return true;
             }
         });
 
