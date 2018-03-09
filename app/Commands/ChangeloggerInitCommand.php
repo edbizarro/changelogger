@@ -41,7 +41,6 @@ class ChangeloggerInitCommand extends Command
                 $this->task('CHANGELOG.md not present, creating', function () {
                     File::put('CHANGELOG.md', '');
                 });
-                File::copy('vendor/edbizarro/changelogger/app/Stubs/changelogger.yml.stub', 'changelogger.yml');
             }
         });
 
