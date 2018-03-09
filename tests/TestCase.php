@@ -9,16 +9,14 @@ abstract class TestCase extends BaseTestCase
     use CreatesApplication;
 
     /**
-     * The Illuminate application instance.
+     * Holds an application instance.
      *
-     * @var \App\Console\Application
+     * @var \Illuminate\Contracts\Foundation\Application
      */
     protected $app;
 
     /**
      * Setup the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {

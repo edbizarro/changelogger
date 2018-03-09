@@ -6,7 +6,6 @@ use App\Libs\Changelog;
 use App\Libs\ConfigReader;
 use App\Libs\Yaml;
 use Illuminate\Support\ServiceProvider;
-use Symfony\Component\Yaml\Yaml;
 
 class AppServiceProvider extends ServiceProvider
 {
