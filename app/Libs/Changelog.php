@@ -30,7 +30,8 @@ class Changelog
      *
      * @throws \Exception
      */
-    public function __construct(ConfigReader $configReader, Yaml $parser) {
+    public function __construct(ConfigReader $configReader, Yaml $parser)
+    {
         $this->reader = $configReader;
         $this->parser = $parser;
 
