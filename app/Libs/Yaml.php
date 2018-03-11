@@ -11,15 +11,16 @@ class Yaml
     /**
      * @param string $filePath
      *
-     * @return array
      * @throws Exception
+     *
+     * @return array
      */
     public function parse(string $filePath): array
     {
         try {
             return YamlParser::parse(file_get_contents($filePath));
         } catch (ParseException $e) {
-            throw new Exception(sprintf("Unable to parse the YAML string: %s", $e->getMessage()));
+            throw new Exception(sprintf('Unable to parse the YAML string: %s', $e->getMessage()));
         }
     }
 }
