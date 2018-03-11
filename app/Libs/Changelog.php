@@ -65,7 +65,7 @@ class Changelog
         $correctOrder = $this->config['changelogger']['types'];
 
         return collect($correctOrder)->transform(function ($type) use ($entries) {
-            return $correctOrder[$type] = $entries->where('type', $type)->all();
-        })->filter();
+            return $entries->where('type', $type)->all();
+        })->filter()->values();
     }
 }
