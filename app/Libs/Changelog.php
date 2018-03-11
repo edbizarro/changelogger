@@ -30,10 +30,7 @@ class Changelog
      *
      * @throws \Exception
      */
-    public function __construct(
-        ConfigReader $configReader,
-        Yaml $parser
-    ) {
+    public function __construct(ConfigReader $configReader, Yaml $parser) {
         $this->reader = $configReader;
         $this->parser = $parser;
 
@@ -62,9 +59,7 @@ class Changelog
      */
     public function orderEntries(Collection $entries): Collection
     {
-        $correctOrder = $this->config['changelogger']['types'];
-
-        return collect($correctOrder)->transform(function ($type) use ($entries) {
+        return collect($this->config['changelogger']['types'])->transform(function ($type) use ($entries) {
             return $entries->where('type', $type)->all();
         })->filter()->values();
     }
