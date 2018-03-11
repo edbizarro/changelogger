@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Commands\ChangeloggerCommand;
+use Tests\TestCase;
 
 class HelloCommandTest extends TestCase
 {

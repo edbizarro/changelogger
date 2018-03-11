@@ -39,8 +39,9 @@ class ChangeloggerCommand extends Command
      */
     public function handle(): void
     {
-        if (! file_exists('changelogger.yml')) {
+        if (!file_exists('changelogger.yml')) {
             $this->error('changelogger.yml not found, you must run changelogger:init first!');
+
             return;
         }
 
